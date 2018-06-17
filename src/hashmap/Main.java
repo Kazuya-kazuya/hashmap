@@ -6,6 +6,7 @@ import java.util.Map;
 public class Main {
 
 	public static void main(String[] args) {
+		//DBをXMLMapで生成
 		Map<String, Object> memberDB = new XMLMap();
 		Map<String, Object> kazuya = new XMLMap();
 		kazuya.put("ID", "1");
@@ -22,12 +23,14 @@ public class Main {
 		tetsuya.put("name", "tetsuya");
 		tetsuya.put("hobby", "mahjong");
 		memberDB.put(tetsuya.get("ID").toString(), tetsuya);
+		//XML形式で出力
 		System.out.println(memberDB);
 	}
 
 }
 
 class XMLMap extends HashMap<String, Object>{
+	//XML形式で出力
 	public String toString() {
 		String str = "";
 		for(String key : this.keySet()) {
